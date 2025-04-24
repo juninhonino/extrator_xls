@@ -1,7 +1,7 @@
-from flask import Flask, request, render_template, send_file
-import pandas as pd
+from flask import Flask, request, render_template, send_file # type: ignore
+import pandas as pd # type: ignore
 import os
-from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename # type: ignore
 
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
