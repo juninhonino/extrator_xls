@@ -28,5 +28,7 @@ def upload_files():
         return send_file(domains_output, as_attachment=True)
     return render_template('index.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
