@@ -1,44 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Extrator de Domínios</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <div class="container">
         <h1>Extrator de Domínios</h1>
-        <form id="uploadForm" method="post" enctype="multipart/form-data">
+        <form id="upload-form" method="POST" enctype="multipart/form-data">
             <div id="drop-area">
-                <p>Arraste os arquivos aqui ou clique para selecionar</p>
-                <input type="file" id="fileElem" name="files[]" multiple accept=".xlsx">
+                <p>Arraste seus arquivos aqui ou clique para selecionar</p>
+                <input type="file" id="fileElem" name="files" multiple hidden>
             </div>
-            <button type="submit">Enviar e Gerar Lista</button>
         </form>
     </div>
 
-    <script>
-        const dropArea = document.getElementById("drop-area");
-        const fileInput = document.getElementById("fileElem");
-
-        dropArea.addEventListener("dragover", (e) => {
-            e.preventDefault();
-            dropArea.classList.add("highlight");
-        });
-
-        dropArea.addEventListener("dragleave", () => {
-            dropArea.classList.remove("highlight");
-        });
-
-        dropArea.addEventListener("drop", (e) => {
-            e.preventDefault();
-            dropArea.classList.remove("highlight");
-            fileInput.files = e.dataTransfer.files;
-        });
-
-        dropArea.addEventListener("click", () => {
-            fileInput.click();
-        });
-    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
+
 </html>
