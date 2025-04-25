@@ -10,12 +10,15 @@
 <body>
     <div class="container">
         <h1>Extrator de Domínios</h1>
-        <form id="upload-form" method="POST" enctype="multipart/form-data">
-            <div id="drop-area">
-                <p>Arraste seus arquivos aqui ou clique para selecionar</p>
-                <input type="file" id="fileElem" name="files" multiple hidden>
-            </div>
-        </form>
+        <div id="drop-area">
+            <p>Arraste seus arquivos aqui ou clique para selecionar</p>
+            <input type="file" id="fileElem" name="files" multiple hidden>
+        </div>
+
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+            <span id="status-text">Aguardando envio...</span>
+        </div>
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
